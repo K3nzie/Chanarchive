@@ -1,0 +1,15 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Archive Thread</h1>
+  <form action="" method="post" name="sendlink">
+      {{ form.hidden_tag() }}
+      <p>
+          {% for error in form.threadlink.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+      </p>
+      <p><input type="submit" value="Archive Thread"></p>
+  </form>
+{% endblock %}
