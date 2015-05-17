@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          What are the requirements to archive a thread?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        A thread must have at least ten replies to be archived. This is to eliminate random, completely unimportant threads from being archived.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Why are some threads showing "Image not found?" on every post?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        For some reason, on rare occurrences, images will not upload to Imgur at all, and therefore show "Image not found" errors all over the thread. Sorry if this happens. I'm really lazy and don't want to debug it.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Why can't I archive threads on some of the boards?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        Yeah, I'm super sorry. I blacklisted a very small amount of boards that I believe could cause a huge problem in the long run. These mainly include boards that are home to large images.
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

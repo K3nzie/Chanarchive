@@ -1,0 +1,79 @@
+// ==UserScript==
+// @name          4chan improvement
+// @namespace     http://userstyles.org
+// @description	  Improves the 4chan image boards in many ways.
+// @author        hark
+// @homepage      https://userstyles.org/styles/5200
+// @include       http://4chan.org/*
+// @include       https://4chan.org/*
+// @include       http://*.4chan.org/*
+// @include       https://*.4chan.org/*
+// @run-at        document-start
+// @version       0.20100706084045
+// ==/UserScript==
+(function() {var css = [
+	"/* sets font */",
+	"body, span#navtop, td.replyhl, td.reply, a, a:hover, a.quotejs, a.quotejs:hover, a.quotelink, span.filesize {font:13px Trebuchet MS !important;} ",
+	"",
+	"/* hides ads */",
+	"div.logo img{display:none !important;}",
+	"iframe{display:none !important;}",
+	"",
+	"/* hr */",
+	"hr{display:none !important;}",
+	"form hr{display:block !important;}",
+	"hr{height:1px !important;border:none !important;background:#999 !important;}",
+	"",
+	"/* rounded corners */",
+	"td.replyhl, td.reply{-moz-border-radius:8px !important;}",
+	"",
+	"/* links */",
+	"a{text-decoration:none !important;}",
+	"a.quotejs:hover, a:hover{font-weight:normal !important;text-decoration:underline !important;}",
+	"",
+	"/* removes ugly borders on page overview [0,1,2...] */",
+	"table,td{border:none !important;}",
+	"td.rules{display:none !important;}",
+	"",
+	"/* logo */",
+	"img + br {display:none !important;}",
+	"",
+	"/* post area (remove this if you want the default post box, the one on top)*/",
+	"input,textarea{margin-right:2px !important;}",
+	"textarea{height:300px !important;}",
+	"div.postarea{position:fixed !important;width:472px !important;height:0px !important;opacity:0.3 !important;right:0px !important;}",
+	"div.postarea:hover{opacity:1 !important;}",
+	"td.postblock{vertical-align:top !important;font-size:10px !important;}",
+	"/* stop removing here */",
+	"",
+	"",
+	"/* blurry thumbnails fix */",
+	"img[md5] {",
+	"height: auto !important;",
+	"width: auto !important;",
+	"}",
+	"",
+	"div.postarea div[style]{",
+	"display:none !important;",
+	"}"
+].join("\n");
+if (typeof GM_addStyle != "undefined") {
+	GM_addStyle(css);
+} else if (typeof PRO_addStyle != "undefined") {
+	PRO_addStyle(css);
+} else if (typeof addStyle != "undefined") {
+	addStyle(css);
+} else {
+	var node = document.createElement("style");
+	node.type = "text/css";
+	node.appendChild(document.createTextNode(css));
+	var heads = document.getElementsByTagName("head");
+	if (heads.length > 0) {
+		heads[0].appendChild(node); 
+	} else {
+		// no head yet, stick it whereever
+		document.documentElement.appendChild(node);
+	}
+}
+})();
+

@@ -1,8 +1,44 @@
-  {% extends "base.html" %}
-    {% block content %}
-      <h1>Hello, {{ user.nickname }}!</h1>
-      {% for post in posts %}
-      <div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
-      {% endfor %}
-    {% endblock %}
+{% extends 'base.html' %}
+{% set title='Welcome to ChanArchive' %}
 
+{% block jumbo %}
+        <p>After the death of 4archive, I wanted to make my own version, use the form here to submit</p>
+        <form>
+        <div class="formgroup">
+         <label for="ThreadLink">Archive a thread</label>
+         <input type="text" class="form-control input-lg" id="ThreadLink" placeholder="Enter link" >
+         <select class="form-control input-lg" id="boardselect">
+         {% for board in boards %}
+         <option>{{ board.short }}</option>
+         {% endfor %}
+         </select>
+         <button type="submit" class="btn btn-lg btn-default pull-left">Archive</button>
+        </div>
+        </form>
+{% endblock %}
+
+{% block content %}
+<h4 class="text-justify"><strong>Important :</strong> In the thread page, there is an option to request the <em>thread takedown</em>, although, a takedown will be considered only when a <del>certain</del> fair amount of requests is reached.</h4>
+
+</div>
+</div>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Latest threads</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Top Views</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Donations</h2>
+          <p>In order to maintain this little platform, some cash will be used. And I'd really appreciate some help</p>
+          <p><a class="btn btn-default" href="#" role="button">Donate &raquo;</a></p>
+        </div>
+      </div>
+      {% endblock %}

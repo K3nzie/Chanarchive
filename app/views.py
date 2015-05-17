@@ -1,33 +1,16 @@
 from flask import render_template, flash, redirect
 from app import app
-from .forms import LoginForm
+from .forms import SendLink
 
 @app.route('/')
 @app.route('/index')
 def index():
-    posts = [ # fake array posts
-    	{
-    		'author': {'nickname':'John'},
-    		'body': 'This is the first article'
-    	},
-    	{
-    		'author': {'nickname:': 'Susan'},
-    		'body' : 'This is the second article'
-    	}
-    ]
-    return render_template('index.html',title="Chanarchive",posts=posts)
+    return render_template('index.html',title="ChanArchive",boards=app.config['CHAN_BOARDS'])
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-    	flash('Login requested for OpenID="%s", remember me=%s' % (form.openid.data, str(form.remember_me.data)))
-    	return redirect('/index')
-    return render_template('login.html', 
-                           title='Sign In',
-                           form=form,
-                           providers=app.config['OPENID_PROVIDERS'])
+@app.route('/about')
+def about():
+	return render_template('about.html')
 
-    @app.route('/about')
-    def about():
-    	return render_template('about.html')
+@app.route('/faq')
+def faq():
+	return render_template('faq.html',title="Frequently Asked Questions")
