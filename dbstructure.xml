@@ -57,7 +57,7 @@
 <part>archive_id</part>
 </key>
 </table>
-<table x="569" y="260" name="Threads">
+<table x="520" y="334" name="Threads">
 <row name="thread_id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -77,11 +77,23 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="Archives" row="archive_id" />
 </row>
+<row name="no" null="0" autoincrement="0">
+<datatype>INT(MAX)</datatype>
+</row>
+<row name="takedown_req" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>0</default></row>
+<row name="posts_num" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+</row>
+<row name="visits" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>0</default></row>
 <key type="PRIMARY" name="">
 <part>thread_id</part>
 </key>
 </table>
-<table x="773" y="80" name="Posts">
+<table x="763" y="33" name="Posts">
 <row name="post_id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -89,9 +101,70 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="Threads" row="thread_id" />
 </row>
+<row name="no" null="0" autoincrement="0">
+<datatype>BIGINT</datatype>
+</row>
+<row name="time" null="0" autoincrement="0">
+<datatype>DATETIME</datatype>
+</row>
+<row name="name" null="0" autoincrement="0">
+<datatype>VARCHAR(40)</datatype>
+<default>'Anonymous'</default></row>
+<row name="comm" null="1" autoincrement="0">
+<datatype>VARCHAR(MAX)</datatype>
+<default>NULL</default></row>
+<row name="resto" null="0" autoincrement="0">
+<datatype>INTEGER(MAX)</datatype>
+</row>
+<row name="filename" null="1" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+</row>
+<row name="extension" null="1" autoincrement="0">
+<datatype>VARCHAR(10)</datatype>
+</row>
+<row name="spoiler" null="0" autoincrement="0">
+<datatype>INTEGER(1)</datatype>
+<default>0</default></row>
 <key type="PRIMARY" name="">
 <part>post_id</part>
 </key>
 </table>
+<table x="1182" y="152" name="Takedowns">
+<row name="takedown_id" null="0" autoincrement="1">
+<datatype>INTEGER</datatype>
+</row>
+<row name="URI" null="0" autoincrement="0">
+<datatype>VARCHAR(MAX)</datatype>
+</row>
+<row name="add_infos" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT(MAX)</datatype>
+<default>NULL</default></row>
+<row name="reason" null="1" autoincrement="0">
+<datatype>VARCHAR(MAX)</datatype>
+</row>
+<row name="thread_id" null="0" autoincrement="0">
+<datatype>INTEGER(MAX)</datatype>
+<default>NULL</default><relation table="Threads" row="thread_id" />
+</row>
+<key type="PRIMARY" name="">
+<part>takedown_id</part>
+</key>
+</table>
+<table x="969" y="418" name="images">
+<row name="image_id" null="0" autoincrement="1">
+<datatype>INTEGER</datatype>
+</row>
+<row name="URL" null="0" autoincrement="0">
+<datatype>VARCHAR(200)</datatype>
+</row>
+<row name="post_id" null="0" autoincrement="0">
+<datatype>INTEGER</datatype>
+<relation table="Posts" row="post_id" />
+</row>
+<key type="PRIMARY" name="">
+<part>image_id</part>
+</key>
+</table>
 </sql>
+
 

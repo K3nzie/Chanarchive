@@ -9,9 +9,10 @@ WTF_CSRF_ENABLED = True
 SECRET_KEY = 'you-will-never-guess'
 
 CHAN_BOARDS = [
-    {'name': 'Random','short': '/b/'},
-    {'name': 'ANime & Manga','short': '/a/'},
-    {'name': 'Fitness','short': '/fit/'},
-    {'name': 'Shit 4chan Says','short': '/s4s/'},
-    {'name': 'Hentai','short': '/h/'}
+    {'name': 'Random','short': '/b/'}
     ]
+
+GLOBAL_LOCATIONS = [
+ 	{'name':'json_files', 'URI':'jsons/' },
+ 	{ 'name':'thumbs_files', 'URI':'th/'  }
+ ]
