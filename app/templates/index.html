@@ -3,20 +3,14 @@
 
 {% block jumbo %}
         <p>After the death of 4archive, I wanted to make my own version, use the form here to submit</p>
-        <form>
+        <form action="{{ url_for('archive') }}" method="post">
         <div class="formgroup">
          <label for="ThreadLink">Archive a thread</label>
-         <input type="text" class="form-control input-lg" id="threadlink" placeholder="Enter link" >
-         <select class="form-control input-lg" id="boardselect">
-         {% for board in config.CHAN_BOARDS %}
-         <option>{{ board.short }}</option>
-         {% endfor %}
-         </select>
+         {{ form.link(class="form-control input-lg",placeholder="Enter a link") }}
          <button type="submit" class="btn btn-lg btn-default pull-left">Archive</button>
         </div>
         </form>
 {% endblock %}
-
 {% block content %}
 <h4 class="text-justify"><strong>Important :</strong> In the thread page, there is an option to request the <em>thread takedown</em>, although, a takedown will be considered only when a <del>certain</del> fair amount of requests is reached.</h4>
 
