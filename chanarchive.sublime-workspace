@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"url",
+				"urlopen"
+			],
+			[
+				"URL",
+				"urlopen"
+			],
+			[
+				"json",
+				"json_link"
+			],
+			[
+				"f",
+				"flask"
+			],
+			[
+				"validat",
+				"validate_on_submit	function"
+			],
+			[
+				"vali",
+				"validate_on_submit	function"
+			],
+			[
+				"thre",
+				"thread_id"
+			],
+			[
+				"arc",
+				"archive_id"
+			],
+			[
+				"B",
+				"CHAN_BOARDS"
+			],
+			[
 				"remember",
 				"remember_me	statement"
 			]
@@ -12,59 +48,10 @@
 	"buffers":
 	[
 		{
-			"file": "config.py",
-			"settings":
-			{
-				"buffer_size": 502,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/templates/index.html",
-			"settings":
-			{
-				"buffer_size": 2204,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/templates/faq.html",
-			"settings":
-			{
-				"buffer_size": 2393,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/templates/base.html",
-			"settings":
-			{
-				"buffer_size": 4769,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "run.py",
-			"settings":
-			{
-				"buffer_size": 58,
-				"line_ending": "Unix",
-				"name": "#!flask/bin/python"
-			}
-		},
-		{
-			"file": "app/forms.py",
-			"settings":
-			{
-				"buffer_size": 211,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/models.py",
 			"settings":
 			{
-				"buffer_size": 604,
+				"buffer_size": 1196,
 				"line_ending": "Unix"
 			}
 		},
@@ -72,7 +59,39 @@
 			"file": "app/views.py",
 			"settings":
 			{
-				"buffer_size": 418,
+				"buffer_size": 1513,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "db_repository/manage.py",
+			"settings":
+			{
+				"buffer_size": 103,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/templates/index.html",
+			"settings":
+			{
+				"buffer_size": 2573,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/templates/archive.html",
+			"settings":
+			{
+				"buffer_size": 200,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/forms.py",
+			"settings":
+			{
+				"buffer_size": 318,
 				"line_ending": "Unix"
 			}
 		}
@@ -118,13 +137,22 @@
 	},
 	"expanded_folders":
 	[
-		"/home/davide/flask",
-		"/home/davide/flask/app",
-		"/home/davide/flask/app/templates"
+		"/home/davide/Chanarchive",
+		"/home/davide/Chanarchive/app",
+		"/home/davide/Chanarchive/app/templates",
+		"/home/davide/Chanarchive/db_repository",
+		"/home/davide/Chanarchive/requirements"
 	],
 	"file_history":
 	[
+		"/home/davide/Chanarchive/app/views.py",
+		"/home/davide/flask/config.py",
+		"/home/davide/chanarchive/app/__init__.py",
+		"/home/davide/flask/run.py",
 		"/home/davide/flask/app/forms.py",
+		"/home/davide/flask/app/models.py",
+		"/home/davide/flask/app/templates/faq.html",
+		"/home/davide/flask/app/templates/404.html",
 		"/home/davide/flask/app/__init__.py",
 		"/home/davide/flask/app/templates/index.html",
 		"/home/davide/flask/app/templates/login.html",
@@ -132,13 +160,12 @@
 		"/home/davide/flask/app/db_create.py",
 		"/home/davide/flask/app/db_migrate.py",
 		"/home/davide/flask/db_upgrade.py",
-		"/home/davide/flask/run.py",
 		"/home/davide/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/davide/.config/sublime-text-3/Packages/User/Plain text.sublime-settings"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 50.0
 	},
 	"find_in_files":
 	{
@@ -152,6 +179,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"        \n",
 			">\n",
 			"    ",
 			"from flask import render_template\nfrom app import app\n\n@app.route('/')\n@app.route('/index')\ndef index():\n    user = {'nickname': 'Miguel'} #fake user\n    return render_template('index.html',title=\"Home\",user=user)\n",
@@ -173,24 +201,24 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "config.py",
+					"file": "app/models.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 502,
+						"buffer_size": 1196,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								398,
-								398
+								0,
+								0
 							]
 						],
 						"settings":
@@ -206,26 +234,53 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/templates/index.html",
+					"file": "app/views.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2204,
+						"buffer_size": 1513,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								396,
-								396
+								1470,
+								1470
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 306.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "db_repository/manage.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 103,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -235,20 +290,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/templates/faq.html",
+					"buffer": 3,
+					"file": "app/templates/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2393,
+						"buffer_size": 2573,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2351,
-								2351
+								921,
+								921
 							]
 						],
 						"settings":
@@ -258,27 +313,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 102.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/templates/base.html",
+					"buffer": 4,
+					"file": "app/templates/archive.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4769,
+						"buffer_size": 200,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3986,
-								3986
+								163,
+								163
 							]
 						],
 						"settings":
@@ -286,39 +341,10 @@
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1275.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "run.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 58,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								58,
-								58
-							]
-						],
-						"settings":
-						{
-							"auto_name": "#!flask/bin/python",
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -327,43 +353,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 211,
+						"buffer_size": 318,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								211,
-								211
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/models.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 604,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								538,
-								538
+								0,
+								0
 							]
 						],
 						"settings":
@@ -375,34 +373,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/views.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 418,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								416,
-								416
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]

@@ -5,15 +5,18 @@ from .forms import SendLink
 from app import db
 from .models import *
 from sqlalchemy import *
+import json
+from urllib.parse import urlparse
 
 @app.route('/')
 @app.route('/index', methods=['POST', 'GET'])
 def index():
 	form = SendLink()
 	if request.method == 'POST':
-		if form.validate_on_submit():
-			redirect(url_for('archive'))
-	return render_template('index.html',title='ChanArchive',form=form)
+		if request['link']:
+			return redirect(url_for('archive'))
+	else: 
+		return render_template('index.html',title='ChanArchive',form=form)
 
 @app.route('/about')
 def about():
@@ -26,16 +29,38 @@ def faq():
 
 @app.route('/archive', methods=['POST'])
 def archive():
+	json_link = 'https://a.4cdn.org'
 	form = SendLink()
 	link = form.link.data
-	#if link.startswith('http://') or link.startswith('https://'):
-		#link = link[-7:]
-	#data = link.split('/')
+	# Check if valid link block
+	parse = urlparse(link)
+	if link == '':
+		flash('The field can\'t be empty')
+		return redirect(url_for('index'))
+	if parse.scheme != 'http':
+		flash('Insert a valid URL')
+		return redirect(url_for('index'))
 	data = link.split('/')
-	return render_template('archive.html', form=form, data=data)
+	if data == False:
+		flash('The link you provided is not a valid 4chan link')
+		return redirect(url_for('index'))
+
+	elif data[2] != 'boards.4chan.org' or len(data[3]) == 0:
+
+		flash('The link you provided is not a valid 4chan link')
+		return redirect(url_for('index'))
+	# end check block
+	j_link = json_link + '/'+ data[3] + '/thread/' + data[5] + '.json'
+ 
+	return render_template('archive.html', form=form)
 
 
 @app.errorhandler(404)
 def not_found(self):
 	return render_template('404.html'), 404
+
+
+@app.errorhandler(500)
+def not_found(self):
+	return render_template('500.html'), 500
 

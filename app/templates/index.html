@@ -7,9 +7,20 @@
         <div class="formgroup">
          <label for="ThreadLink">Archive a thread</label>
          {{ form.link(class="form-control input-lg",placeholder="Enter a link") }}
-         <button type="submit" class="btn btn-lg btn-default pull-left">Archive</button>
+         <button type="submit" class="btn btn-lg btn-default">Archive</button>
         </div>
         </form>
+        {% with messages=get_flashed_messages() %}
+        {% if messages %}
+        <div class="row">
+        <ul style="list-style: none;">
+        {% for message in messages %}
+        <li><p class="text-danger">{{ message }}</p></li>
+        {% endfor %}
+        </ul>
+        </div>
+        {% endif %}
+        {% endwith %}
 {% endblock %}
 {% block content %}
 <h4 class="text-justify"><strong>Important :</strong> In the thread page, there is an option to request the <em>thread takedown</em>, although, a takedown will be considered only when a <del>certain</del> fair amount of requests is reached.</h4>
